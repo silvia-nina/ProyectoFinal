@@ -3,26 +3,23 @@ package testSuite.ticktick;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
-import testSuite.ticktick.TestBase;
-
-import java.time.Duration;
 import java.util.Date;
 
 public class CRUDTaskTest extends TestBase {
     @Test
-    public void verifyCRUDTask(){
-
+     public void verifyCRUDTask(){
         String taskCreated="MOJIX"+new Date().getTime();
         String taskUpdated="QA"+new Date().getTime();
 //Login
+
         mainPage.loginButton.click();
         loginPage.emailTxtBox.setText(user);
         loginPage.passwordTxtBox.setText(password);
         loginPage.loginButton.click();
         centerSection.getInboxLabel().waitControlIsInThePage();
         Assertions.assertTrue(centerSection.inboxLabel.isControlDisplayed(),"ERROR! the login was faield");
-//AddTaskList
+
+        //AddTaskList
         sideSection.addNewTaskList.click();
         taskListPage.nameTaskListTxtBox.setText(taskCreated);
         taskListPage.saveTaskButton.click();
@@ -41,9 +38,6 @@ public class CRUDTaskTest extends TestBase {
       deletePopUp.deleteButton.click();
       sideSection.getTaskList(taskCreated+taskUpdated).waitControlIsNotInThePage();
       Assertions.assertFalse(sideSection.isTaskListDisplayedInList(taskCreated+taskUpdated));
-
-
-
 
     }
 }
