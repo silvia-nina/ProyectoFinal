@@ -16,6 +16,7 @@ public class TestBase {
     SideSection sideSection = new SideSection();
 
     TaskListPage taskListPage = new TaskListPage();
+    DeletePopUp deletePopUp = new DeletePopUp();
     String user= GetPropTick.getInstance().getUser();
     String password =GetPropTick.getInstance().getPwd();
 
