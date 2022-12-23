@@ -11,7 +11,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "testSuite.ticktick")
+@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "testSuite/ticktick")
 public class TestRunner {
 
 
